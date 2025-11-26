@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Proyecto_1
@@ -16,9 +11,30 @@ namespace Proyecto_1
         double num1 = 0, num2 = 0, resultado = 0;
         string operacion = "";
         bool nuevaOperacion = false;
-        string conexionString = @"Server=UZIELM\SQLEXPRESS01;Database=Proyecto1;TrustServerCertificate=true;Integrated Security=SSPI;";
-        SqlConnection conexion;
-        
+        string conexionString = @"Server=(local);Database=HistorialOperaciones;Trusted_Connection=True;";
+
+
+        void GuardarHistorial(string operacion, double resultado)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(conexionString))
+                {
+                    string sql = "INSERT INTO HistorialOperaciones (Operacion, Resultado) VALUES (@op, @res)";
+                    SqlCommand cmd = new SqlCommand(sql, con);
+                    cmd.Parameters.AddWithValue("@op", operacion);
+                    cmd.Parameters.AddWithValue("@res", resultado);
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al guardar: " + ex.Message);
+            }
+        }
+
         public Form1()
         {
             InitializeComponent();
@@ -27,120 +43,110 @@ namespace Proyecto_1
         private void button12_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-
-                if (nuevaOperacion)
-                {
+            if (nuevaOperacion)
+            {
                 Pantalla.Clear();
                 nuevaOperacion = false;
-                }
+            }
             Pantalla.Text += btn.Text;
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-
-             if (nuevaOperacion)
-                {
+            if (nuevaOperacion)
+            {
                 Pantalla.Clear();
                 nuevaOperacion = false;
-                }
+            }
             Pantalla.Text += btn.Text;
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-
-                if (nuevaOperacion)
-                {
+            if (nuevaOperacion)
+            {
                 Pantalla.Clear();
                 nuevaOperacion = false;
-                }
+            }
             Pantalla.Text += btn.Text;
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-
-                if (nuevaOperacion)
-                {
+            if (nuevaOperacion)
+            {
                 Pantalla.Clear();
                 nuevaOperacion = false;
-                }
+            }
             Pantalla.Text += btn.Text;
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-
-                if (nuevaOperacion)
-                {
+            if (nuevaOperacion)
+            {
                 Pantalla.Clear();
                 nuevaOperacion = false;
-                }
+            }
             Pantalla.Text += btn.Text;
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-
-                if (nuevaOperacion)
-                {
+            if (nuevaOperacion)
+            {
                 Pantalla.Clear();
                 nuevaOperacion = false;
-                }
+            }
             Pantalla.Text += btn.Text;
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-
-                if (nuevaOperacion)
-                {
+            if (nuevaOperacion)
+            {
                 Pantalla.Clear();
                 nuevaOperacion = false;
-                }
+            }
             Pantalla.Text += btn.Text;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-
-                if (nuevaOperacion)
-                {
+            if (nuevaOperacion)
+            {
                 Pantalla.Clear();
                 nuevaOperacion = false;
-                }
+            }
             Pantalla.Text += btn.Text;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-
-                if (nuevaOperacion)
-                {
+            if (nuevaOperacion)
+            {
                 Pantalla.Clear();
                 nuevaOperacion = false;
-                }
+            }
             Pantalla.Text += btn.Text;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-
-                if (nuevaOperacion)
-                {
+            if (nuevaOperacion)
+            {
                 Pantalla.Clear();
                 nuevaOperacion = false;
-                }
+            }
             Pantalla.Text += btn.Text;
         }
 
@@ -159,13 +165,10 @@ namespace Proyecto_1
         private void button14_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-
             if (Pantalla.Text != "")
             {
                 if (operacion != "")
-                {
                     button18_Click(null, null);
-                }
 
                 num1 = double.Parse(Pantalla.Text);
                 operacion = btn.Text;
@@ -177,13 +180,10 @@ namespace Proyecto_1
         private void button15_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-
             if (Pantalla.Text != "")
             {
                 if (operacion != "")
-                {
                     button18_Click(null, null);
-                }
 
                 num1 = double.Parse(Pantalla.Text);
                 operacion = btn.Text;
@@ -195,13 +195,10 @@ namespace Proyecto_1
         private void button16_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-
             if (Pantalla.Text != "")
             {
                 if (operacion != "")
-                {
                     button18_Click(null, null);
-                }
 
                 num1 = double.Parse(Pantalla.Text);
                 operacion = btn.Text;
@@ -213,13 +210,10 @@ namespace Proyecto_1
         private void button17_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-
             if (Pantalla.Text != "")
             {
                 if (operacion != "")
-                {
                     button18_Click(null, null);
-                }
 
                 num1 = double.Parse(Pantalla.Text);
                 operacion = btn.Text;
@@ -257,7 +251,6 @@ namespace Proyecto_1
             try
             {
                 string texto = Pantalla.Text;
-
                 string[] partes = texto.Split(new char[] { '+', '-', '*', '/' });
 
                 if (partes.Length >= 2)
@@ -331,51 +324,6 @@ namespace Proyecto_1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.BackColor = Color.LightGray;
-            Pantalla.BackColor = Color.White;
-            Pantalla.ForeColor = Color.Black;
-            Pantalla.ReadOnly = true;
-            Pantalla.TextAlign = HorizontalAlignment.Right;
-
-            foreach (Control c in this.Controls)
-            {
-                if (c is Button)
-                {
-                    Button b = (Button)c;
-
-                    if (b.Text == "C" || b.Text == "CE")
-                        b.BackColor = Color.Salmon;
-                    else if (b.Text == "+" || b.Text == "-" || b.Text == "*" || b.Text == "/" || b.Text == "=")
-                        b.BackColor = Color.Orange;
-                    else if (b.Text == "x²" || b.Text == "√")
-                        b.BackColor = Color.LightSkyBlue;
-                    else
-                        b.BackColor = Color.Gainsboro;
-
-                    b.FlatStyle = FlatStyle.Popup;
-                }
-            }
         }
-
-        void GuardarHistorial(string operacion, double resultado)
-        {
-            try
-            {
-                SqlConnection con = new SqlConnection(conexionString);
-                string sql = "INSERT INTO HistorialOperaciones (Operacion, Resultado) VALUES (@op, @res)";
-                SqlCommand cmd = new SqlCommand(sql, con);
-                cmd.Parameters.AddWithValue("@op", operacion);
-                cmd.Parameters.AddWithValue("@res", resultado);
-                con.Open();
-                cmd.ExecuteNonQuery();
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al guardar: " + ex.Message);
-            }
-        }
-
-
     }
 }

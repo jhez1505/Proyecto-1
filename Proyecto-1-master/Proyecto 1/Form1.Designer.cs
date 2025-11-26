@@ -274,7 +274,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(330, 248);
+            this.ClientSize = new System.Drawing.Size(469, 450);
             this.Controls.Add(this.MostrarHistorial);
             this.Controls.Add(this.Potencia);
             this.Controls.Add(this.Raiz);
