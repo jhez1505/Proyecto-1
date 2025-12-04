@@ -1,0 +1,75 @@
+/* styles.css - diseño moderno azul/púrpura */
+body {
+    background: linear-gradient(135deg, #0f1530 0%, #0d2b4a 50%, #071428 100%);
+    color: #ffffff;
+    font-family: "Segoe UI", sans-serif;
+    margin: 0;
+    padding: 28px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 22px;
+    font-size: 38px;
+    color: #c6b8ff;
+    text-shadow: 0 0 14px #8f6bff;
+}
+
+.card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+    padding: 18px;
+    margin: 18px auto;
+    border-radius: 12px;
+    width: 86%;
+    max-width: 980px;
+    box-shadow: 0 6px 22px rgba(7,11,30,0.6);
+    border: 1px solid rgba(255,255,255,0.04);
+}
+
+input[type="number"] {
+    width: calc(100% - 18px);
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 10px;
+    font-size: 16px;
+    background: rgba(255,255,255,0.95);
+    color: #000;
+}
+
+button {
+    background: #8b5cf6;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 8px;
+    font-weight: 600;
+}
+
+button:hover { transform: translateY(-2px); }
+
+table {
+    width: 100%;
+    margin-top: 12px;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background: rgba(255,255,255,0.06);
+    font-weight: 700;
+}
+
+.controls { margin-top: 12px; }
+
+#resText p, #simText, #resultadoPrediccion {
+    margin: 8px 0;
+    color: #e6e6ff;
+    font-size: 16px;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>ESTADÍSTICA IA</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <h1>ESTADÍSTICA IA</h1>
+
+    <!-- recurso local (imagen que subiste) -->
+    <img src="/mnt/data/9bef53f1-7e32-43a3-b7b0-93b552697985.png" alt="recurso" id="recursoLocal" style="display:none;" />
+
+    <div class="card">
+        <h2>Ingresar Venta Mensual</h2>
+        <input type="number" id="ventaInput" placeholder="Ej: 150" />
+        <button id="btnAgregar">Agregar Venta</button>
+
+        <h3>Ventas ingresadas</h3>
+        <table>
+            <thead>
+                <tr><th>Mes</th><th>Venta</th></tr>
+            </thead>
+            <tbody id="tablaVentas"></tbody>
+        </table>
+
+        <div class="controls">
+            <button id="btnAnalizar">Analizar Datos</button>
+            <button id="btnLimpiar">Limpiar</button>
+        </div>
+    </div>
+
+    <div class="card" id="resultados" style="display:none;">
+        <h2>Resultados Estadísticos</h2>
+        <div id="resText"></div>
+    </div>
+
+    <div class="card" id="graficaCard" style="display:none;">
+        <h2>Gráfica de Ventas y Predicción</h2>
+        <canvas id="grafico" width="800" height="300"></canvas>
+    </div>
+
+    <div class="card" id="simCard" style="display:none;">
+        <h2>Simulación Probabilística (Monte Carlo)</h2>
+        <p id="simText"></p>
+    </div>
+
+    <div class="card" id="predCard" style="display:none;">
+        <h2>Predicción IA (Regresión Lineal)</h2>
+        <label>Mes a predecir:</label>
+        <input type="number" id="mesPrediccion" min="1" value="13" />
+        <button id="btnPredecir">Predecir</button>
+        <p id="resultadoPrediccion"></p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
